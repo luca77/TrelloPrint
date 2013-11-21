@@ -17,13 +17,13 @@ class Card(object):
             self.cl[i] = checklist[i]
 
     def print_me(self):
-        print
+        print()
         print((self.name))
         if (self.desc):
-            print self.desc
-        for l in self.labels.keys():
+            print((self.desc))
+        for l in list(self.labels.keys()):
             print_bg(self.labels[l], l)
 
         for i in sorted(self.cl.keys()):
             self.cl[i].print_me()
-        print
+        print()

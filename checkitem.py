@@ -9,8 +9,8 @@ class CheckItem(object):
 
     def print_me(self):
         if self.state == "complete":
-            print "[v]",
+            print("[v]", end=' ')
         else:
-            print "[ ]",
+            print("[ ]", end=' ')
 
-        print((self.name))
+        print(self.name)
