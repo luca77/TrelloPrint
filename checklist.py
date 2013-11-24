@@ -12,7 +12,8 @@ class CheckList(object):
             x = CheckItem(j)
             self.list[j["pos"]] = x
 
-    def print_me(self):
-        print((self.name))
+    def __str__(self):
+        string = self.name + "\n"
         for j in sorted(self.list.keys()):
-            self.list[j].print_me()
+            string += self.list[j] + "\n"
+        return string

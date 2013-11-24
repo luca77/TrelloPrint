@@ -22,7 +22,7 @@ def main():
     f.close()
 
     b = Board(data)
-    b.print_me()
+    print(b)
 
 
 if __name__ == "__main__":
