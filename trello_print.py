@@ -10,9 +10,14 @@ import json
 from board import Board
 
 
+release = "0.1"
+
+
 def main():
     parser = argparse.ArgumentParser(description='Print Trello.com JSON file')
     parser.add_argument('source', metavar="source file")
+    parser.add_argument('--version', action='version',
+        version='TrelloPrint ' + release)
     args = parser.parse_args()
 
     filename = args.source
