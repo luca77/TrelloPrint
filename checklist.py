@@ -15,5 +15,5 @@ class CheckList(object):
     def __str__(self):
         string = self.name + "\n"
         for j in sorted(self.list.keys()):
-            string += self.list[j] + "\n"
+            string += str(self.list[j])
         return string

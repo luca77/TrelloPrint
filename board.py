@@ -32,5 +32,5 @@ class Board(object):
         if (self.desc):
             string += self.desc + "\n"
         for l in self.lists:
-            string += l + "\n"
+            string += str(l)
         return string

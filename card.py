@@ -23,5 +23,5 @@ class Card(object):
         for l in list(self.labels.keys()):
             string += self.labels[l] + "\n"
         for i in sorted(self.cl.keys()):
-            string += self.cl[i] + "\n"
+            string += str(self.cl[i]) + "\n"
         return string
