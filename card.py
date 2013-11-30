@@ -1,4 +1,3 @@
-from utility import print_bg
 
 
 class Card(object):

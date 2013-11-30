@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-import sys
-import os
-import os.path
 import argparse
 import json
 #from pprint import pprint
