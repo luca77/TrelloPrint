@@ -1,4 +1,3 @@
-from utility import print_bg
 
 
 class Card(object):
@@ -16,14 +15,12 @@ class Card(object):
         for i in jcard["idChecklists"]:
             self.cl[i] = checklist[i]
 
-    def print_me(self):
-        print()
-        print((self.name))
+    def __str__(self):
+        string = self.name + "\n"
         if (self.desc):
-            print((self.desc))
+            string += self.desc + "\n"
         for l in list(self.labels.keys()):
-            print_bg(self.labels[l], l)
-
+            string += self.labels[l] + "\n"
         for i in sorted(self.cl.keys()):
-            self.cl[i].print_me()
-        print()
+            string += str(self.cl[i]) + "\n"
+        return string

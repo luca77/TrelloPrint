@@ -27,10 +27,10 @@ class Board(object):
             x = List(l, self.cards)
             self.lists.append(x)
 
-    def print_me(self):
-        print((self.name))
-        print((self.url))
+    def __str__(self):
+        string = self.name + "\n" + self.url + "+\n"
         if (self.desc):
-            print((self.desc))
+            string += self.desc + "\n"
         for l in self.lists:
-            l.print_me()
+            string += str(l)
+        return string

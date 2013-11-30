@@ -7,10 +7,10 @@ class CheckItem(object):
         self.name = jitem["name"]
         self.state = jitem["state"]
 
-    def print_me(self):
+    def __str__(self):
+        string = ""
         if self.state == "complete":
-            print("[v]", end=' ')
+            string += "[v] "
         else:
-            print("[ ]", end=' ')
-
-        print(self.name)
+            string += "[ ] "
+        return string + self.name + "\n"

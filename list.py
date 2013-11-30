@@ -12,9 +12,10 @@ class List(object):
             if (c.idList == self.id):
                 self.cards.append(c)
 
-    def print_me(self, all='no'):
-        if (all == 'no') and (self.closed):
-            return
-        print((self.name))
+    def __str__(self):
+        if (self.closed):
+            return ""
+        string = "====================\n" + self.name + "\n"
         for c in self.cards:
-            c.print_me()
+            string += "--------------------\n" + str(c) + "\n"
+        return string
