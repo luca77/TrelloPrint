@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+﻿#!/usr/bin/python3
 
 import argparse
 import json
@@ -7,7 +7,7 @@ import json
 from board import Board
 
 
-release = "0.1"
+release = "0.2pre"
 
 
 def main():
