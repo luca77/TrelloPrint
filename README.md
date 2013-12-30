@@ -16,8 +16,8 @@ an advanced online to-do list manager.
 
 ## Usage
 
-    ./trello_print.py filename.json
-  
+    ./trello_print.py --format {text,markdown,html} filename.json
+
 The output is redirected to the console.
 
 
