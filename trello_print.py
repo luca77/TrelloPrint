@@ -7,7 +7,7 @@ import json
 from board import Board
 
 
-release = "0.2pre"
+release = "0.2"
 
 
 def main():

@@ -1,6 +1,6 @@
 ﻿# TrelloPrint
 
-Current release: **0.2pre**
+Current release: **0.2**
 
 ## Purpose
 
