@@ -1,6 +1,6 @@
-# TrelloPrint
+﻿# TrelloPrint
 
-Current release: **0.1**
+Current release: **0.2**
 
 ## Purpose
 
@@ -11,13 +11,13 @@ an advanced online to-do list manager.
 ## Environment (tested so far)
 
 - Linux
-- Python 3
+- Python 3.2
 
 
 ## Usage
 
-    ./trello_print.py filename.json
-  
+    ./trello_print.py --format {text,markdown,html} filename.json
+
 The output is redirected to the console.
 
 

@@ -19,3 +19,11 @@ class List(object):
         for c in self.cards:
             string += "--------------------\n" + str(c) + "\n"
         return string
+
+    def get_md(self):
+        if (self.closed):
+            return ""
+        string = "## " + self.name + "\n\n"
+        for c in self.cards:
+            string += c.get_md()
+        return string + "\n"

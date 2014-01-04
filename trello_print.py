@@ -7,13 +7,15 @@ import json
 from board import Board
 
 
-release = "0.1"
+release = "0.2"
 
 
 def main():
     parser = argparse.ArgumentParser(description='Print Trello.com JSON file')
-    parser.add_argument('source', metavar="source file")
-    parser.add_argument('--version', action='version',
+    parser.add_argument('-f', '--format', choices=["text", "markdown", "html"],
+         default="markdown")
+    parser.add_argument('source', metavar="json_file")
+    parser.add_argument('-v', '--version', action='version',
         version='TrelloPrint ' + release)
     args = parser.parse_args()
 
@@ -24,8 +26,12 @@ def main():
     f.close()
 
     b = Board(data)
-    print(b)
+    if (args.format == "text"):
+        print(b)
 
+    md_string = b.get_md()
+    if (args.format == "markdown"):
+        print(md_string)
 
 if __name__ == "__main__":
     main()
