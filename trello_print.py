@@ -29,6 +29,9 @@ def main():
     if (args.format == "text"):
         print(b)
 
+    md_string = b.get_md()
+    if (args.format == "markdown"):
+        print(md_string)
 
 if __name__ == "__main__":
     main()

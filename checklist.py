@@ -17,3 +17,9 @@ class CheckList(object):
         for j in sorted(self.list.keys()):
             string += str(self.list[j])
         return string
+
+    def get_md(self):
+        string = "#### " + self.name + "\n\n"
+        for j in sorted(self.list.keys()):
+            string += "- " + str(self.list[j])
+        return string + "\n\n"

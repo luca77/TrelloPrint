@@ -34,3 +34,11 @@ class Board(object):
         for l in self.lists:
             string += str(l)
         return string
+
+    def get_md(self):
+        string = "# " + self.name + "\n\n" + self.url + "\n\n"
+        if (self.desc):
+            string += self.desc + "\n\n"
+        for l in self.lists:
+            string += l.get_md()
+        return string
