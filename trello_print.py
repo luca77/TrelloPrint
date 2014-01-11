@@ -1,13 +1,16 @@
 #!/usr/bin/python3
 
+import os
+
 import argparse
 import json
-#from pprint import pprint
 
 from board import Board
 
 
-release = "0.3pre"
+RELEASE = "0.3pre"
+
+TEMP_FILE_NAME = "/tmp/tp.md"
 
 
 def main():
@@ -16,7 +19,7 @@ def main():
          default="markdown")
     parser.add_argument('source', metavar="json_file")
     parser.add_argument('-v', '--version', action='version',
-        version='TrelloPrint ' + release)
+        version='TrelloPrint ' + RELEASE)
     args = parser.parse_args()
 
     filename = args.source
@@ -28,10 +31,20 @@ def main():
     b = Board(data)
     if (args.format == "text"):
         print(b)
+        exit
 
     md_string = b.get_md()
     if (args.format == "markdown"):
         print(md_string)
+        exit
+
+    if (args.format == "html"):
+        temp_fd = open(TEMP_FILE_NAME, "w")
+        temp_fd.write(md_string)
+        temp_fd.close()
+        os.system("markdown " + TEMP_FILE_NAME)
+        os.remove(TEMP_FILE_NAME)
+
 
 if __name__ == "__main__":
     main()
