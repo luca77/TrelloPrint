@@ -14,6 +14,18 @@ an advanced online to-do list manager.
 - Python 3.2
 
 
+## Dependencies
+
+**Packages**:
+
+- argparse
+- json
+
+**Software**:
+
+- markdown
+
+
 ## Usage
 
     ./trello_print.py --format {text,markdown,html} filename.json
