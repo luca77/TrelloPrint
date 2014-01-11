@@ -1,6 +1,6 @@
 ﻿# TrelloPrint
 
-Current release: **0.2pre**
+Current release: **0.3pre**
 
 ## Purpose
 
@@ -23,5 +23,5 @@ The output is redirected to the console.
 
 ## Next steps
 
-- **0.2** Export in Markdown/MultiMarkdown format
 - **0.3** Conversion in HTML format
+- **0.4** Adding missing things (links, images, etc.)
