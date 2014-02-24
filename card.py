@@ -5,45 +5,48 @@ class Card(object):
 
     def __init__(self, jcard, checklist):
         super(Card, self).__init__()
-        self.name = jcard["name"]
-        self.desc = jcard["desc"]
-        self.idList = jcard["idList"]
-        self.labels = {}
+        self.__name = jcard["name"]
+        self.__desc = jcard["desc"]
+        self.__idList = jcard["idList"]
+        self.__labels = {}
         for l in jcard["labels"]:
-            self.labels[l["color"]] = l["name"]
-        self.cl = {}
+            self.__labels[l["color"]] = l["name"]
+        self.__cl = {}
         for i in jcard["idChecklists"]:
-            self.cl[i] = checklist[i]
+            self.__cl[i] = checklist[i]
 
     def __str__(self):
-        string = self.name + "\n"
-        if (self.desc):
-            string += self.desc + "\n"
-        for l in list(self.labels.keys()):
+        string = self.__name + "\n"
+        if (self.__desc):
+            string += self.__desc + "\n"
+        for l in list(self.__labels.keys()):
             label = ""
-            if (self.labels[l]):
-                label = self.labels[l]
+            if (self.__labels[l]):
+                label = self.__labels[l]
             else:
                 label = l
             string += label + "\n"
-        for i in sorted(self.cl.keys()):
-            string += str(self.cl[i]) + "\n"
+        for i in sorted(self.__cl.keys()):
+            string += str(self.__cl[i]) + "\n"
         return string
 
     def get_md(self):
-        string = "### " + self.name + "\n\n"
-        if (self.desc):
-            string += self.desc + "\n\n"
-        if (self.labels):
+        string = "### " + self.__name + "\n\n"
+        if (self.__desc):
+            string += self.__desc + "\n\n"
+        if (self.__labels):
             string += "**Labels**: "
-            for l in list(self.labels.keys()):
+            for l in list(self.__labels.keys()):
                 label = ""
-                if (self.labels[l]):
-                    label = self.labels[l]
+                if (self.__labels[l]):
+                    label = self.__labels[l]
                 else:
                     label = l
                 string += "\"" + label + "\" "
             string += "\n\n"
-        for i in sorted(self.cl.keys()):
-            string += self.cl[i].get_md()
+        for i in sorted(self.__cl.keys()):
+            string += self.__cl[i].get_md()
         return string + "\n"
+
+    def get_list_id(self):
+        return self.__idList
