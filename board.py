@@ -15,7 +15,7 @@ class Board(object):
         self.__checklists = {}
         for i in jboard["checklists"]:
             x = CheckList(i)
-            self.__checklists[x.get_id()] = x
+            self.__checklists[x.id] = x
 
         self.__cards = []
         for x in jboard["cards"]:

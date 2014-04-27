@@ -26,3 +26,5 @@ class CheckList(object):
 
     def get_id(self):
         return self.__id
+
+    id = property(get_id)

@@ -9,7 +9,7 @@ class List(object):
         self.__closed = jlist["closed"]
         self.__cards = []
         for c in all_cards:
-            if (c.get_list_id() == self.__id):
+            if (c.id == self.__id):
                 self.__cards.append(c)
 
     def __str__(self):

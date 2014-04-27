@@ -50,3 +50,6 @@ class Card(object):
 
     def get_list_id(self):
         return self.__idList
+
+    id = property(get_list_id)
+    
