@@ -16,17 +16,15 @@ TEMP_FILE_NAME = "/tmp/tp.md"
 def main():
     parser = argparse.ArgumentParser(description='Print Trello.com JSON file')
     parser.add_argument('-f', '--format', choices=["text", "markdown", "html"],
-         default="markdown")
+                        default="markdown")
     parser.add_argument('source', metavar="json_file")
     parser.add_argument('-v', '--version', action='version',
-        version='TrelloPrint ' + RELEASE)
+                        version='TrelloPrint ' + RELEASE)
     args = parser.parse_args()
 
     filename = args.source
-
-    f = open(filename)
-    data = json.load(f)
-    f.close()
+    with open(filename, "r") as f:
+        data = json.load(f)
 
     b = Board(data)
     if (args.format == "text"):
@@ -36,12 +34,9 @@ def main():
     md_string = b.get_md()
     if (args.format == "markdown"):
         print(md_string)
-        exit
-
-    if (args.format == "html"):
-        temp_fd = open(TEMP_FILE_NAME, "w")
-        temp_fd.write(md_string)
-        temp_fd.close()
+    elif (args.format == "html"):
+        with open(TEMP_FILE_NAME, "w") as temp_fd:
+            temp_fd.write(md_string)
         os.system("markdown " + TEMP_FILE_NAME)
         os.remove(TEMP_FILE_NAME)
 

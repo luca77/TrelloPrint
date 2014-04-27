@@ -1,6 +1,7 @@
 
 
 class Card(object):
+
     """docstring for Card"""
 
     def __init__(self, jcard, checklist):
@@ -52,4 +53,3 @@ class Card(object):
         return self.__idList
 
     id = property(get_list_id)
-    

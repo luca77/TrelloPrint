@@ -1,7 +1,9 @@
 
 
 class CheckItem(object):
+
     """docstring for CheckItem"""
+
     def __init__(self, jitem):
         super(CheckItem, self).__init__()
         self.__name = jitem["name"]

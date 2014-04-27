@@ -4,13 +4,14 @@ from list import List
 
 
 class Board(object):
+
     """docstring for Board"""
+
     def __init__(self, jboard):
         super(Board, self).__init__()
         self.__name = jboard["name"]
         self.__desc = jboard["desc"]
         self.__url = jboard["url"]
-        #self.labels = jboard["labelNames"]
 
         self.__checklists = {}
         for i in jboard["checklists"]:

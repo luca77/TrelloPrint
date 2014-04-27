@@ -1,7 +1,9 @@
 
 
 class List(object):
+
     """docstring for List"""
+
     def __init__(self, jlist, all_cards):
         super(List, self).__init__()
         self.__id = jlist["id"]

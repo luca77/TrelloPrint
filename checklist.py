@@ -2,7 +2,9 @@ from checkitem import CheckItem
 
 
 class CheckList(object):
+
     """docstring for CheckList"""
+
     def __init__(self, jlist):
         super(CheckList, self).__init__()
         self.__id = jlist["id"]
