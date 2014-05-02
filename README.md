@@ -1,6 +1,6 @@
 ﻿# TrelloPrint
 
-Current release: **0.2**
+Current release: **0.3**
 
 ## Purpose
 
@@ -14,6 +14,18 @@ an advanced online to-do list manager.
 - Python 3.2
 
 
+## Dependencies
+
+**Packages**:
+
+- argparse
+- json
+
+**Software**:
+
+- markdown
+
+
 ## Usage
 
     ./trello_print.py --format {text,markdown,html} filename.json
@@ -23,5 +35,4 @@ The output is redirected to the console.
 
 ## Next steps
 
-- **0.2** Export in Markdown/MultiMarkdown format
-- **0.3** Conversion in HTML format
+- **0.4** Adding missing things (links, images, etc.)

@@ -1,29 +1,31 @@
 
 
 class List(object):
+
     """docstring for List"""
+
     def __init__(self, jlist, all_cards):
         super(List, self).__init__()
-        self.id = jlist["id"]
-        self.name = jlist["name"]
-        self.closed = jlist["closed"]
-        self.cards = []
+        self.__id = jlist["id"]
+        self.__name = jlist["name"]
+        self.__closed = jlist["closed"]
+        self.__cards = []
         for c in all_cards:
-            if (c.idList == self.id):
-                self.cards.append(c)
+            if (c.id == self.__id):
+                self.__cards.append(c)
 
     def __str__(self):
-        if (self.closed):
+        if (self.__closed):
             return ""
-        string = "====================\n" + self.name + "\n"
-        for c in self.cards:
+        string = "====================\n" + self.__name + "\n"
+        for c in self.__cards:
             string += "--------------------\n" + str(c) + "\n"
         return string
 
     def get_md(self):
-        if (self.closed):
+        if (self.__closed):
             return ""
-        string = "## " + self.name + "\n\n"
-        for c in self.cards:
+        string = "## " + self.__name + "\n\n"
+        for c in self.__cards:
             string += c.get_md()
         return string + "\n"
