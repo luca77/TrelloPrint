@@ -8,7 +8,7 @@ import json
 from board import Board
 
 
-RELEASE = "0.3pre"
+RELEASE = "0.3"
 
 TEMP_FILE_NAME = "/tmp/tp.md"
 
